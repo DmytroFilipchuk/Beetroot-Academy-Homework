@@ -132,7 +132,90 @@ else:
     print("False")
 
 
+    
+"""
+Task1*
 
+Write a Python program to construct the following pattern, using a while loop
+
+*
+
+* *
+
+* * *
+
+* * * *
+
+* * * * *
+
+* * * *
+
+* * *
+
+* *
+
+*
+
+Плюс за можливість динамічно змінити максимальну кількість зірочок в одному рядку (в прикладі 5)
+
+"""
+max_number = 5
+min_number = 0
+num = 1
+while num < max_number :
+    print("*" * num)
+    num += 1
+
+while num > min_number:
+    print("*" * num)
+    num -= 1
+
+"""
+Task2*
+
+Write a python program, which sums all digits in a python string.
+
+Examples, input - ‘1234’, output - 10
+"""
+user_input = (input("Enter some digits:  "))
+
+
+def sum_digits_string(user_input):
+    sum_digit = 0
+    for i in user_input:
+        if i.isdigit() == True:
+            x = int(i)
+            sum_digit = sum_digit + x
+
+    return sum_digit
+
+print(sum_digits_string(user_input))
+
+
+
+"""
+Task3*
+
+Write a Python program that accepts a string and calculate the number of digits, 
+letters and other characters in the input string
+"""
+
+user_input_2 = input("Text sth: ")
+
+def count_characters(user_input_2):
+    num_digit = 0
+    num_letters = 0
+    num_signs = 0
+    for i in user_input_2:
+        if i.isdigit() == True:
+            num_digit += 1
+        elif i.isalpha() == True:
+            num_letters += 1
+        else:
+            num_signs += 1
+
+    return f"Number of digits is: {num_digit} \nNumber of letter is: {num_letters} \nNumber of signs is: {num_signs}"
+print(count_characters(user_input_2))
 
 
 
