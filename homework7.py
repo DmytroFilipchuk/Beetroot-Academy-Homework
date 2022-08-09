@@ -98,31 +98,7 @@ def task4():
     print(dict)
     print(dict_reversed)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 def main():
     task1()
     task2()
