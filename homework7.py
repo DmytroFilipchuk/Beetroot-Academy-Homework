@@ -108,3 +108,75 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+"""GAME MINER"""
+import random
+SIZE = 8
+NUM_OF_MINES = 10
+mines = []
+user = []
+
+def get_mines():
+    for i in range(NUM_OF_MINES):
+        mines.append((random.randint(1, SIZE),
+                      random.randint(1, SIZE)))
+    return mines and  print(mines)
+
+def want_play():
+    while True:
+        answer = input("Press enter to start the game, type 'N' to exit: ").upper()
+        if answer == "":
+            break
+        elif answer == "N":
+            exit()
+
+def game():
+    while True:
+        print("   ", '    '.join(map(str, list(range(1, SIZE + 1)))))
+        print("   ", "    ".join("|" * SIZE))
+        for i in range(1, SIZE + 1):
+            line = []
+            for j in range(1, SIZE + 1):
+                if (j, i) not in user:
+                    line.append('*')
+                else:
+                    line.append("✔")
+            print(i, "|", "    ".join(map(str, line)))
+
+        user_input = input('Enter coordinaters x and y: ')
+        x, y = user_input.split()
+
+        if not x.isdigit() or not y.isdigit():
+            continue
+
+        x, y = int(x), int(y)
+        if (x, y) in mines:
+            print("You died")
+            break
+        user.append((x, y))
+
+def want_again():
+    while True:
+        answer = input("Press enter to play again, type 'N' to exit: ").upper()
+        if answer == "":
+            return True
+        elif answer == "N":
+            return False
+        else:
+            pass
+
+def main():
+    want_play()
+    get_mines()
+    game()
+    while want_again():
+        user.clear()
+        mines.clear()
+        get_mines()
+        game()
+    else:
+        exit()
+
+main()
+
+
