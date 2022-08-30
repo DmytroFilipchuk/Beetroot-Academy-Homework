@@ -52,7 +52,6 @@ def task1():
         @wraps(func)
         def wrap(*args, **kwargs):
             print(f"{func.__name__} called with:{[arg for arg in args]}")
-            func(*args, **kwargs)
 
         return wrap
 
