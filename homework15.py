@@ -106,8 +106,8 @@ def task_3():
 
     class TVController:
         CHANNELS = ["BBC", "Discovery", "TV1000","TNT","1+1"]
-        Current_channel = ""
-        Number = 0
+        CURRENT_CHANNEL = ""
+        NUMBER = 0
 
         def __init__(self):
             pass
@@ -129,28 +129,28 @@ def task_3():
 
         @no_channel
         def turn_channel(self, number):
-            self.Current_channel = self.CHANNELS[number - 1]
-            self.Number = number
-            return self.Current_channel
+            self.CURRENT_CHANNEL = self.CHANNELS[number - 1]
+            self.NUMBER = number
+            return self.CURRENT_CHANNEL
 
         def next_channel(self):
-            if self.Current_channel == self.CHANNELS[-1]:
-                self.Current_channel = self.CHANNELS[0]
-                return self.Current_channel
+            if self.CURRENT_CHANNEL == self.CHANNELS[-1]:
+                self.CURRENT_CHANNEL = self.CHANNELS[0]
+                return self.CURRENT_CHANNEL
             else:
-                self.Current_channel = self.CHANNELS[self.Number]
-                return self.Current_channel
+                self.CURRENT_CHANNEL = self.CHANNELS[self.NUMBER]
+                return self.CURRENT_CHANNEL
 
         def previous_channel(self):
-            if self.Current_channel == self.CHANNELS[0]:
-                self.Current_channel = self.CHANNELS[-1]
-                return self.Current_channel
+            if self.CURRENT_CHANNEL == self.CHANNELS[0]:
+                self.CURRENT_CHANNEL = self.CHANNELS[-1]
+                return self.CURRENT_CHANNEL
             else:
-                self.Current_channel = self.CHANNELS[self.Number - 1]
-                return self.Current_channel
+                self.CURRENT_CHANNEL = self.CHANNELS[self.NUMBER - 1]
+                return self.CURRENT_CHANNEL
 
         def current_channel(self):
-            return self.Current_channel
+            return self.CURRENT_CHANNEL
 
         def is_exist(self, find_me):
 
