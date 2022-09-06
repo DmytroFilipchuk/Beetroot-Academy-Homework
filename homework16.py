@@ -11,33 +11,33 @@ while salary should only be available to the teacher.
 
 """
 def task_1():
+    
     class Person():
         def __init__(self, firstname, secondname):
             self.firstname = firstname
-            self.secondname =secondname
-
+            self.secondname = secondname
 
     class Student(Person):
+
         def __init__(self,firstname, secondname, year, exam_status):
             super().__init__(firstname, secondname)
             self.year = year
             self.exam_status = exam_status
-
+            
         def next_year_of_study(self):
             if self.exam_status == "Passed":
                 self.year += 1
             else:
                 print(f"{self.firstname} {self.secondname} can't be moved to the next year")
 
-
     class Teacher(Person):
+
         def __init__(self,firstname, secondname, salary):
             super().__init__(firstname, secondname)
             self.salary = salary
 
         def salary_rise(self,rise_amount):
             self.salary += rise_amount
-
 
     student1 = Student("Dima","Philipchuk",2,"In progress")
     student2 = Student("Max","Vyshnevski",1,"Passed")
@@ -78,6 +78,7 @@ assert m.remove_positives([26, -11, -8, 13, -90]) == [-11, -8, -90]
 assert m.filter_leaps([2001, 1884, 1995, 2003, 2020]) == [1884, 2020]
 """
 def task_2():
+
     class Mathematician():
 
         def square_nums(self,numbers):
