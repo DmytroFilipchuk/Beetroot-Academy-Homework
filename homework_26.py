@@ -95,7 +95,7 @@ def task_3():
 
         def get_from_stack(self, search_element):
 
-            if not stack:
+            if self.empty():
                 return "Stack is empty"
 
             found_status = False
@@ -132,7 +132,7 @@ def task_3():
 
         def get_from_queue(self,search_element):
 
-            if not stack:
+            if self.empty():
                 return "Stack is empty"
 
             found_status = False
