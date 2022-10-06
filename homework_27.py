@@ -10,10 +10,6 @@ class Vertex:
     def get_name(self):
         return self.name
 
-    def way(self,first_stop):
-        our_way = {self.name: [first_stop]}
-        return our_way
-
     def is_marked(self):
         return self._marked
 
