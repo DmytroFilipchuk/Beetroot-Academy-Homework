@@ -21,9 +21,10 @@ def converter_voice_msg(audio):
   
 @bot.message_handler(content_types=['voice'])
 def voice_processing(message):
-    print(message.voice)
+
     file_info = bot.get_file(message.voice.file_id)
-    downloaded_file = bot.download_file(file_info.file_path)
+    downloaded_file = bot.download_file(file_info.file_path
+                                        
     with open('voice_message.m4a', 'wb') as new_file:
         new_file.write(downloaded_file)
 
